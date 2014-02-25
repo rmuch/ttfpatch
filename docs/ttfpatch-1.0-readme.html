@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="StarOffice/5.2 (Win32)">
+	<META NAME="AUTHOR" CONTENT="Wolfram E&szlig;er">
+	<META NAME="CREATED" CONTENT="20010301;12420696">
+	<META NAME="CHANGEDBY" CONTENT="Wolfram E&szlig;er">
+	<META NAME="CHANGED" CONTENT="20010301;13091780">
+</HEAD>
+<BODY BGCOLOR="#ff6633">
+<P ALIGN=CENTER><B><FONT SIZE=5><FONT COLOR="#ffff00">T&nbsp;T&nbsp;F&nbsp;P&nbsp;A&nbsp;T&nbsp;C&nbsp;H</FONT></FONT></B>
+<BR>(C) by Wolfram E&szlig;er [ <A HREF="mailto:wok@derwok.de">wok@derwok.de</A>
+]</P>
+<P ALIGN=LEFT><B><FONT COLOR="#ffff00">TTFPATCH</FONT></B> is a Win32
+commandline tool, which provides an easy way for font designers to
+set the 'embeddable' flags of their own true type fonts.  <B><FONT COLOR="#ffff00">TTFPATCH</FONT></B>
+comes as Windows 32-bit executable and with complete C++ sourcecode.
+So if you like, you can build your own binary for your OS platform.
+<B><FONT COLOR="#ffff00">TTFPATCH</FONT></B> has <B>no</B> graphical
+user interface, it is a commandline tool.</P>
+<P ALIGN=LEFT>Download current version here:<BR>    
+<A HREF="http://www.derwok.de/downloads/ttfpatch/ttfpatch10.zip">http://www.derwok.de/downloads/ttfpatch/ttfpatch10.zip</A>
+</P>
+<P ALIGN=LEFT><U>Usage examples:<BR></U>If you (as the font designer)
+want to <B>PROHIBIT</B> embedding of your font e.g. in Adobe Acrobat
+PDF files, simply run:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>ttfpatch
+myfont.ttf 2<BR></B><SPAN STYLE="font-weight: medium">But remember,
+when you do the above, the users of your font could get the following
+error message when building a PDF document with your
+font:</SPAN><B><BR><CODE><FONT SIZE=2 STYLE="font-size: 11pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%%[
+ProductName: Distiller ]%%<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%%[
+Error: MyFont cannot be embedded due to licensing
+restrictions.]%%</FONT></CODE><BR><BR></B>On the other hand, if you
+(as the font designer) decide to <B>ALLOW</B> the users of your font
+to embed your font into documents (like Adobe Acrobat PDF files),
+then you should run e.g.:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>ttfpatch
+myfont.ttf 4<BR><BR></B><SPAN STYLE="font-weight: medium">If you want
+to change the fsType of all TTF files in the current directory, then
+in a commandline window enter:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><B>for
+%x in (*.ttf) do ttfpatch %x 2<BR></B><SPAN STYLE="font-weight: medium"><FONT COLOR="#00ff00">but
+keep the warning below in mind if you enter this command!!!</FONT></SPAN></P>
+<P ALIGN=LEFT>If you are not(!) the designer / copyright holder of a
+font, you are not  allowed to use the <B><FONT COLOR="#ffff00">TTFPATCH</FONT></B>
+tool to change the fsType value of a given TrueType font! Respect the
+copyright of the font designer!</P>
+<P ALIGN=LEFT><U>Usage: <BR></U><SPAN STYLE="text-decoration: none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><B>ttfpatch
+TrueTypeFontFile [NewFsTypeValue]</B></P>
+<P ALIGN=LEFT>fsType values:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0:
+embedding for permanent installation<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:
+reserved - do not use!<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>2:
+embedding restricted (not allowed!)</B><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4:
+embedding for preview &amp; printing allowed<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8:
+embedding for editing allowed<BR>Hint: fsType values can be added. So
+a fsType value of '12'  (which is 4 + 8) means set 'embedding for
+preview&amp;printing allowed' and set 'embedding for editing
+allowed'.</P>
+<P ALIGN=LEFT><FONT COLOR="#00ff00"><U><B>WARNING!!!</B><BR></U>THE
+PROGRAM DIRECTLY CHANGES THE FILE (NO TEMPFILE OR <BR>DIFFERENT
+OUTFILE!) IT MAY BE POSSIBLE (THOUGH UNLIKELY)<BR>THAT YOUR FONTFILE
+IS DESTROYED AFER USING THIS PROGRAM.<BR>SO KEEP A BACKUP OF THE FILE
+TO BE MODIFIED!!!</FONT></P>
+<P ALIGN=LEFT><B><U>LICENCE</U></B><BR>This programm and ist
+sourcecode are freeware. <BR>You may do everything you want with the
+source / binary, as long<BR>as you keep my (C)opyright notice
+unchanged and as long as<BR>you agree to the following disclaimer:</P>
+<P ALIGN=LEFT><U><B>DISCLAIMER</B><BR></U>THIS FREEWARE PROGRAM IS
+PROVIDED BY WOLFRAM ESSER &quot;AS IS&quot;<BR>AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO<BR>THE IMPLIED
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR<BR>PURPOSE
+AND NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL<BR>PROJECT
+MAYO OR ITS CONTRIBUTORS BE HELD LIABLE FOR ANY DIRECT,<BR>INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES<BR>(INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR<BR>SERVICES,
+LOSS OF USE, DATA OR PROFITS; OR BUSINESS INTERRUPTION)<BR>HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY WHETHER IN CONTRACT,<BR>STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING<BR>IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+THE<BR>POSSIBILITY OF SUCH DAMAGE.<BR>IF YOUR LOCALITY DOES NOT ALLOW
+THESE WARRANTY CONDITIONS, YOU ARE <BR>NOT GRANTED PERMISSION TO USE.</P>
+<P ALIGN=LEFT>TrueType Font, TTF and Microsoft are registered
+trademarks of Microsoft Corp.<BR>Adobe, Acrobat, PDF are registered
+trademarks of Acrobat Corp.<BR>OS/2 is a registered trademark of IBM
+Corp.</P>
+<P ALIGN=LEFT>Wuerzburg, Germany 2001-02-23</P>
+</BODY>
+</HTML>
