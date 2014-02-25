@@ -231,13 +231,15 @@ int readheader()
 	tabversion = (unsigned short) readBE2(fontfile);	// 0x0001 Version
 	if(tabversion != 0x0001)
 	{
-		if((tabversion == 0x0000) || (tabversion == 0x0002))
+		// OS/2 table versions: 0 - TrueType rev 1.5; 1 - TrueType rev 1.66; 2 - OpenType rev 1.2;
+		//                      3 - OpenType rev 1.4; 4 - OpenType rev 1.6
+		if((tabversion == 0x0000) || (tabversion == 0x0002) || (tabversion == 0x0003) || (tabversion == 0x0004))
 		{
-			printf ("\nWarning: OS/2 tableversion is not '0x0001' but '0x0000'\n");
+			printf ("\nWarning: OS/2 tableversion is not '0x0001' but hex:%04x\n", tabversion);
 		}
 		else
 		{
-			printf ("\nError: OS/2 tableversion must be 0, 1 or 2 and is hex:%04x\n", tabversion);
+			printf ("\nError: OS/2 tableversion must be between 0 and 4 and is hex:%04x\n", tabversion);
 			return 1;
 		}
 	}
