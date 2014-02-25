@@ -71,12 +71,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\StdAfx.cpp" />
     <ClCompile Include="..\..\src\ttfpatch.cpp" />
     <ClCompile Include="..\..\src\woktools.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\StdAfx.h" />
     <ClInclude Include="..\..\src\woktools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

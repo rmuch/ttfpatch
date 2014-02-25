@@ -6,7 +6,6 @@
 	(C) Wolfram Esser, 4.2.1999
 */
 
-#include "stdafx.h"
 
 #include <stdlib.h>
 #include <stdio.h>

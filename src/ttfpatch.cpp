@@ -9,7 +9,7 @@
 
 
 
-#include "stdafx.h"
+#include <stdio.h>
 #include "woktools.h"
 #include "string.h"
 #include <stdlib.h>
